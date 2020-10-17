@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".general.ui.TelaDeBuscaGastosBF">
+
+
+    <TextView
+        android:id="@+id/label_municipio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/munic_pio"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_municipio"
+        android:layout_width="225dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="@string/informe_cep"
+        android:background="@drawable/shape_edittext"
+        android:ems="10"
+        android:hint="@string/informe_cep"
+        android:inputType="text"
+        android:padding="8dp"
+        android:textColorHint="#000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/label_municipio"
+        app:layout_constraintTop_toBottomOf="@+id/label_municipio" />
+
+    <TextView
+        android:id="@+id/label_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/data"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/label_municipio"
+        app:layout_constraintTop_toBottomOf="@+id/et_municipio" />
+
+    <EditText
+        android:id="@+id/et_date"
+        android:layout_width="225dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shape_edittext"
+        android:ems="10"
+        android:hint="@string/datetime"
+        android:inputType="number"
+        android:padding="8dp"
+        android:textColorHint="#000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_municipio"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/label_municipio"
+        app:layout_constraintTop_toBottomOf="@+id/label_data" />
+
+    <Button
+        android:id="@+id/bt_consultar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/shape_edittext"
+        android:gravity="center"
+        android:text="@string/consultar"
+        app:layout_constraintEnd_toEndOf="@+id/et_date"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/label_municipio"
+        app:layout_constraintTop_toBottomOf="@+id/et_date" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="396dp"
+        android:layout_height="182dp"
+        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:cardBackgroundColor="#FDD835"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_consultar"
+        app:layout_constraintVertical_bias="0.13999999">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_valor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:text="@string/valor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_valor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@android:color/primary_text_light"
+                android:textStyle="italic"
+                tools:text="4381287"
+                app:layout_constraintStart_toStartOf="@+id/label_valor"
+                app:layout_constraintTop_toBottomOf="@+id/label_valor" />
+
+            <TextView
+                android:id="@+id/tv_label_total_beneficiados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/total_beneficiados"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/label_valor"
+                app:layout_constraintTop_toBottomOf="@+id/tv_valor" />
+
+            <TextView
+                android:id="@+id/tv_total_beneficiados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@android:color/primary_text_light"
+                android:textStyle="italic"
+                tools:text="29445"
+                app:layout_constraintStart_toStartOf="@+id/label_valor"
+                app:layout_constraintTop_toBottomOf="@+id/tv_label_total_beneficiados" />
+
+            <TextView
+                android:id="@+id/label_informativo"
+                android:layout_width="383dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/dados_obtidos_no_portal_da_transpar_ncia_do_governo_federal"
+                android:textColor="@android:color/primary_text_light"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
