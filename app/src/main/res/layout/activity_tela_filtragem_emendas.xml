@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".general.ui.TelaFiltragemEmendas">
+
+
+    <TextView
+        android:id="@+id/label_ano_ementa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/ano"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_anoEmenta"
+        android:layout_width="225dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shape_edittext"
+        android:hint="@string/informe_o_ano_da_ementa"
+        android:ems="10"
+        android:inputType="number"
+        android:padding="8dp"
+        android:textColorHint="#000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/label_ano_ementa"
+        app:layout_constraintTop_toBottomOf="@+id/label_ano_ementa" />
+
+    <TextView
+        android:id="@+id/label_nome_autor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:text="@string/nome_do_autor"
+        app:layout_constraintStart_toStartOf="@+id/label_ano_ementa"
+        app:layout_constraintTop_toBottomOf="@+id/et_anoEmenta" />
+
+    <EditText
+        android:id="@+id/et_autor_ementa"
+        android:layout_width="225dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shape_edittext"
+        android:ems="10"
+        android:hint="@string/infome_o_autor_da_ementa"
+        android:inputType="text"
+        android:padding="8dp"
+        android:textColorHint="#000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/label_ano_ementa"
+        app:layout_constraintTop_toBottomOf="@+id/label_nome_autor" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/n_mero_da_ementa"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/label_ano_ementa"
+        app:layout_constraintTop_toBottomOf="@+id/et_autor_ementa" />
+
+    <EditText
+        android:id="@+id/et_numero_ementa"
+        android:layout_width="225dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shape_edittext"
+        android:ems="10"
+        android:hint="@string/informe_o_n_mero_da_ementa"
+        android:inputType="text"
+        android:padding="8dp"
+        android:textColorHint="#000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/label_ano_ementa"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/bt_consultar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/shape_edittext"
+        android:gravity="center"
+        android:text="@string/consultar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/et_anoEmenta"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/label_ano_ementa"
+        app:layout_constraintTop_toBottomOf="@+id/et_numero_ementa"
+        app:layout_constraintVertical_bias="0.131" />
+
+    <TextView
+        android:id="@+id/tv_teste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@android:color/background_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_consultar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,5 +15,10 @@ class TelaPrincipal : AppCompatActivity() {
             startActivity(Intent(this@TelaPrincipal,TelaDeBuscaGastosBF::class.java))
         }
 
+        view_emendasParlamentares.setOnClickListener {
+            startActivity(Intent(this@TelaPrincipal,TelaFiltragemEmendas::class.java))
+
+        }
+
     }
 }

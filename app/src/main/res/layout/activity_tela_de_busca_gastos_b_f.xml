@@ -30,7 +30,7 @@
         android:background="@drawable/shape_edittext"
         android:ems="10"
         android:hint="@string/informe_cep"
-        android:inputType="text"
+        android:inputType="number"
         android:padding="8dp"
         android:textColorHint="#000"
         android:textSize="16sp"

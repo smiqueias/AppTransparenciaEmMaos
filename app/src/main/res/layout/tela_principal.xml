@@ -12,7 +12,7 @@
         android:layout_width="152dp"
         android:layout_height="129dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/shape_main_activity"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="@+id/view_gastosBolsaFamilia"
         app:layout_constraintVertical_bias="0.17000002"
         app:srcCompat="@drawable/lupa2"
-        android:contentDescription="TODO" />
+         />
 
     <TextView
         android:id="@+id/label_consultaBolsaFamilia"
@@ -47,4 +47,45 @@
         app:layout_constraintStart_toStartOf="@+id/view_gastosBolsaFamilia"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+
+    <View
+        android:id="@+id/view_emendasParlamentares"
+        android:layout_width="152dp"
+        android:layout_height="129dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/shape_main_activity"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </View>
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="67dp"
+        android:layout_height="73dp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toBottomOf="@+id/view_emendasParlamentares"
+        app:layout_constraintEnd_toEndOf="@+id/view_emendasParlamentares"
+        app:layout_constraintHorizontal_bias="0.435"
+        app:layout_constraintStart_toStartOf="@+id/view_emendasParlamentares"
+        app:layout_constraintTop_toTopOf="@+id/view_emendasParlamentares"
+        app:layout_constraintVertical_bias="0.035"
+        app:srcCompat="@drawable/lupa2" />
+
+    <TextView
+        android:id="@+id/label_consultaEmendaParlamentar"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/consultar_emendas_parlamentares"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/view_emendasParlamentares"
+        app:layout_constraintStart_toStartOf="@+id/view_emendasParlamentares"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
