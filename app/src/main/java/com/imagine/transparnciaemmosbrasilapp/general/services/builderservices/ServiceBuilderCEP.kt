@@ -1,4 +1,4 @@
-package com.imagine.transparnciaemmosbrasilapp.general.services
+package com.imagine.transparnciaemmosbrasilapp.general.services.builderservices
 
 
 import retrofit2.Retrofit

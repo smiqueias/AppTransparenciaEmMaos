@@ -1,14 +1,11 @@
-package com.imagine.transparnciaemmosbrasilapp.general.services
+package com.imagine.transparnciaemmosbrasilapp.general.services.builderservices
 
-import com.google.gson.GsonBuilder
+import com.imagine.transparnciaemmosbrasilapp.general.services.MyInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ServiceBuilderBolsaFamilia {
-
-
-
 
     private val okHttp = OkHttpClient.Builder().apply {
         addInterceptor(MyInterceptor())

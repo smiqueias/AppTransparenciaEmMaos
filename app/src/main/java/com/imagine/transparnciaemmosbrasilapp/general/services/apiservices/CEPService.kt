@@ -1,4 +1,4 @@
-package com.imagine.transparnciaemmosbrasilapp.general.services
+package com.imagine.transparnciaemmosbrasilapp.general.services.apiservices
 
 
 import com.imagine.transparnciaemmosbrasilapp.general.model.CEPModel

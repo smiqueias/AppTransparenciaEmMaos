@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.imagine.transparnciaemmosbrasilapp.R
-import com.imagine.transparnciaemmosbrasilapp.general.services.BolsaFamiliaService
-import com.imagine.transparnciaemmosbrasilapp.general.services.CEPService
-import com.imagine.transparnciaemmosbrasilapp.general.services.ServiceBuilderBolsaFamilia
-import com.imagine.transparnciaemmosbrasilapp.general.services.ServiceBuilderCEP
+import com.imagine.transparnciaemmosbrasilapp.general.services.apiservices.BolsaFamiliaService
+import com.imagine.transparnciaemmosbrasilapp.general.services.apiservices.CEPService
+import com.imagine.transparnciaemmosbrasilapp.general.services.builderservices.ServiceBuilderBolsaFamilia
+import com.imagine.transparnciaemmosbrasilapp.general.services.builderservices.ServiceBuilderCEP
 import kotlinx.android.synthetic.main.activity_tela_de_busca_gastos_b_f.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope

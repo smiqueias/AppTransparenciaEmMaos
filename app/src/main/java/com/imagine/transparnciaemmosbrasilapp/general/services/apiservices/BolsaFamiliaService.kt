@@ -1,4 +1,4 @@
-package com.imagine.transparnciaemmosbrasilapp.general.services
+package com.imagine.transparnciaemmosbrasilapp.general.services.apiservices
 
 
 import com.imagine.transparnciaemmosbrasilapp.general.model.BolsaFamiliaModel
@@ -8,7 +8,6 @@ import retrofit2.http.Query
 
 
 interface BolsaFamiliaService {
-
 
     @GET("api-de-dados/bolsa-familia-por-municipio")
      suspend fun fetchBolsaFamiliaDados(
