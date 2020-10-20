@@ -52,14 +52,15 @@
         android:id="@+id/view_emendasParlamentares"
         android:layout_width="152dp"
         android:layout_height="129dp"
-        android:layout_marginStart="220dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/shape_main_activity"
         android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.88"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </View>
-
+        app:layout_constraintTop_toTopOf="parent"></View>
 
     <ImageView
         android:id="@+id/imageView2"

@@ -8,18 +8,18 @@ import retrofit2.http.Query
 interface EmendasService {
 
     @GET("api-de-dados/emendas")
-    suspend fun fetchEmendasWithYear(@Query("ano") ano: Int): Response<EmendasModel>
+    suspend fun fetchEmendasWithYear(@Query("ano") ano: String): Response<MutableList<EmendasModel>>
 
     @GET("api-de-dados/emendas")
     suspend fun fetchEmendasWithYearAndAuthor(
         @Query("nomeAutor") nomeAutor: String,
         @Query("ano") ano: String
-    ): Response<EmendasModel>
+    ): Response<MutableList<EmendasModel>>
 
     @GET("api-de-dados/emendas")
     suspend fun fetchEmendasWithYearAndAuthorAndNumber(
         @Query("nomeAutor") nomeAutor: String,
         @Query("ano") ano: String,
         @Query("numeroEmenda") numeroEmenda: String
-    ): Response<EmendasModel>
+    ): Response<MutableList<EmendasModel>>
 }

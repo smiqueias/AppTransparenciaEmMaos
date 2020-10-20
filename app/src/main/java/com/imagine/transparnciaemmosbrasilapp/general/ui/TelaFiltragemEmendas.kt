@@ -1,45 +1,36 @@
 package com.imagine.transparnciaemmosbrasilapp.general.ui
 
-import android.app.Service
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.imagine.transparnciaemmosbrasilapp.R
-import com.imagine.transparnciaemmosbrasilapp.general.services.apiservices.EmendasService
-import com.imagine.transparnciaemmosbrasilapp.general.services.builderservices.ServiceBuilderEmendas
 import kotlinx.android.synthetic.main.activity_tela_filtragem_emendas.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class TelaFiltragemEmendas : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_filtragem_emendas)
 
         bt_consultar.setOnClickListener {
 
-            GlobalScope.launch(Dispatchers.IO) {
+            if (et_anoEmenda.text.isNotEmpty()) {
 
-                getEmendasWithYear()
+                val i = Intent(this@TelaFiltragemEmendas, ListagemDasEmendas::class.java)
+
+                i.putExtra("ano", et_anoEmenda.text.toString())
+                i.putExtra("nomeAutor", et_autor_emenda.text.toString())
+                i.putExtra("numeroEmenda", et_numero_emenda.text.toString())
+
+                startActivity(i)
+
+            } else {
+                Toast.makeText(
+                    baseContext, "Informe o ano da emenda para a busca", Toast.LENGTH_LONG
+                ).show()
             }
-
-        }
-
-    }
-
-    suspend fun getEmendasWithYear() {
-
-        val destinationService = ServiceBuilderEmendas
-                                .buildServiceEmendas(EmendasService::class.java)
-        val requesCall = destinationService.fetchEmendasWithYear(et_anoEmenta.text.toString().toInt())
-
-        if(requesCall.isSuccessful) {
-
-            requesCall.body()!!.forEach {
-                runOnUiThread() { tv_teste.text = it.ano.toString() }
-            }
-        }
-        else { runOnUiThread() {tv_teste.text = requesCall.code().toString()}}
+       }
 
     }
 }

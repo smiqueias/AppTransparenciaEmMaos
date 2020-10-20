@@ -11,13 +11,16 @@
     <string name="dados_obtidos_no_portal_da_transpar_ncia_do_governo_federal">* Dados obtidos no Portal da Transparência do Governo Federal</string>
     <string name="consultar_emendas_parlamentares">Consultar Emendas Parlamentares</string>
     <string name="ano">ANO *</string>
-    <string name="informe_o_ano_da_ementa">Informe o ano da ementa</string>
+    <string name="informe_o_ano_da_emenda">Informe o ano da emenda</string>
     <string name="nome_do_autor">Nome do autor</string>
-    <string name="infome_o_autor_da_ementa">Infome o autor da ementa</string>
+    <string name="infome_o_autor_da_ementa">Infome o autor da emenda</string>
     <string name="n_mero_da_ementa">Número da ementa</string>
-    <string name="informe_o_n_mero_da_ementa">Informe o número da ementa</string>
+    <string name="informe_o_n_mero_da_ementa">Informe o número da emenda</string>
     <string name="ano_label">Ano:</string>
     <string name="valor_liquidado">Valor Liquidado:</string>
     <string name="valor_empenhado">Valor Empenhado:</string>
     <string name="valor_pago">Valor Pago:</string>
+    <string name="localidade_do_gasto">Localidade do gasto:</string>
+    <string name="fun_o">Função:</string>
+    <string name="subfun_o">Subfunção:</string>
 </resources>

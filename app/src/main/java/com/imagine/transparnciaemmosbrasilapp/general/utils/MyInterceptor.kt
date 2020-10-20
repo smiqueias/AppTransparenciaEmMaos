@@ -1,4 +1,4 @@
-package com.imagine.transparnciaemmosbrasilapp.general.services
+package com.imagine.transparnciaemmosbrasilapp.general.utils
 
 import okhttp3.Interceptor
 import okhttp3.Response

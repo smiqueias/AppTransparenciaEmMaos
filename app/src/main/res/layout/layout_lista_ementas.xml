@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="250dp"
     android:background="@color/colorPrimary"
     android:orientation="vertical"
     app:cardBackgroundColor="#FDD835"
@@ -12,7 +12,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="200dp"
         android:layout_margin="8dp"
         android:background="@color/colorPrimary"
         app:cardBackgroundColor="#FDD835"
@@ -21,7 +21,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="168dp">
+            android:layout_height="200dp">
 
             <TextView
                 android:id="@+id/label_ano"
@@ -94,14 +94,13 @@
                 android:id="@+id/label_valor_pago"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="128dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/valor_pago"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/label_ano"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="@+id/label_ano"
+                app:layout_constraintTop_toBottomOf="@+id/tv_valor_empenhado" />
 
             <TextView
                 android:id="@+id/tv_valor_pago"
@@ -110,9 +109,79 @@
                 android:layout_marginTop="5dp"
                 android:textColor="@android:color/primary_text_light"
                 android:textStyle="italic"
-                app:layout_constraintStart_toStartOf="@+id/label_valor_pago"
+                app:layout_constraintStart_toStartOf="@+id/label_ano"
                 app:layout_constraintTop_toBottomOf="@+id/label_valor_pago"
                 tools:text="123.123.123,00" />
+
+            <TextView
+                android:id="@+id/label_localidade_gasto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="128dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/localidade_do_gasto"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/label_ano"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_localidade_gasto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/primary_text_light"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/label_localidade_gasto"
+                app:layout_constraintTop_toBottomOf="@+id/label_localidade_gasto"
+                tools:text="Nacional" />
+
+            <TextView
+                android:id="@+id/label_funcao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/fun_o"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/label_localidade_gasto"
+                app:layout_constraintTop_toBottomOf="@+id/tv_localidade_gasto" />
+
+            <TextView
+                android:id="@+id/tv_funcao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/primary_text_light"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/tv_localidade_gasto"
+                app:layout_constraintTop_toBottomOf="@+id/label_funcao"
+                tools:text="Saúde" />
+
+            <TextView
+                android:id="@+id/label_sub_funcao"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:text="@string/subfun_o"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/label_localidade_gasto"
+                app:layout_constraintTop_toBottomOf="@+id/tv_funcao" />
+
+            <TextView
+                android:id="@+id/tv_subFuncao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                tools:text="Formação de recursos humanos"
+                android:textColor="@android:color/primary_text_light"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/label_localidade_gasto"
+                app:layout_constraintTop_toBottomOf="@+id/label_sub_funcao" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

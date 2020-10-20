@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 
 class TelaDeBuscaGastosBF : AppCompatActivity() {
 
-    var codIbge: String = ""
+    private var codIbge: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,7 +64,7 @@ class TelaDeBuscaGastosBF : AppCompatActivity() {
     }
 
 
-    suspend fun getCodeIBGE() {
+    private suspend fun getCodeIBGE() {
 
         val destinationServiceCEP = ServiceBuilderCEP.buildServiceCEP(CEPService::class.java)
 
@@ -80,7 +80,7 @@ class TelaDeBuscaGastosBF : AppCompatActivity() {
         }
     }
 
-    suspend fun getDataBolsaFamilia(codIbge: String) {
+    private suspend fun getDataBolsaFamilia(codIbge: String) {
 
         val destinationServiceBolsaFamilia = ServiceBuilderBolsaFamilia
             .buildServiceBolsaFamilia(BolsaFamiliaService::class.java)
@@ -101,8 +101,9 @@ class TelaDeBuscaGastosBF : AppCompatActivity() {
 
         }
     }
-
 }
+
+
 
 
 

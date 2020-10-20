@@ -22,14 +22,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_anoEmenta"
+        android:id="@+id/et_anoEmenda"
         android:layout_width="225dp"
         android:layout_height="37dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/shape_edittext"
-        android:hint="@string/informe_o_ano_da_ementa"
+        android:hint="@string/informe_o_ano_da_emenda"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="text|number"
         android:padding="8dp"
         android:textColorHint="#000"
         android:textSize="16sp"
@@ -46,10 +46,10 @@
         android:textStyle="bold"
         android:text="@string/nome_do_autor"
         app:layout_constraintStart_toStartOf="@+id/label_ano_ementa"
-        app:layout_constraintTop_toBottomOf="@+id/et_anoEmenta" />
+        app:layout_constraintTop_toBottomOf="@+id/et_anoEmenda" />
 
     <EditText
-        android:id="@+id/et_autor_ementa"
+        android:id="@+id/et_autor_emenda"
         android:layout_width="225dp"
         android:layout_height="37dp"
         android:layout_marginTop="8dp"
@@ -73,17 +73,17 @@
         android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/label_ano_ementa"
-        app:layout_constraintTop_toBottomOf="@+id/et_autor_ementa" />
+        app:layout_constraintTop_toBottomOf="@+id/et_autor_emenda" />
 
     <EditText
-        android:id="@+id/et_numero_ementa"
+        android:id="@+id/et_numero_emenda"
         android:layout_width="225dp"
         android:layout_height="37dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/shape_edittext"
         android:ems="10"
         android:hint="@string/informe_o_n_mero_da_ementa"
-        android:inputType="text"
+        android:inputType="text|number"
         android:padding="8dp"
         android:textColorHint="#000"
         android:textSize="16sp"
@@ -99,22 +99,10 @@
         android:gravity="center"
         android:text="@string/consultar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/et_anoEmenta"
+        app:layout_constraintEnd_toEndOf="@+id/et_anoEmenda"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/label_ano_ementa"
-        app:layout_constraintTop_toBottomOf="@+id/et_numero_ementa"
-        app:layout_constraintVertical_bias="0.131" />
-
-    <TextView
-        android:id="@+id/tv_teste"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="@android:color/background_dark"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_consultar" />
+        app:layout_constraintTop_toBottomOf="@+id/et_numero_emenda"
+        app:layout_constraintVertical_bias="0.143" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,6 @@
 package com.imagine.transparnciaemmosbrasilapp.general.services.builderservices
 
-import com.imagine.transparnciaemmosbrasilapp.general.services.MyInterceptor
+import com.imagine.transparnciaemmosbrasilapp.general.utils.MyInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
