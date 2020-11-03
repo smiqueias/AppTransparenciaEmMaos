@@ -30,7 +30,7 @@
         android:background="@drawable/shape_edittext"
         android:ems="10"
         android:hint="@string/informe_cep"
-        android:inputType="number"
+        android:inputType="text"
         android:padding="8dp"
         android:textColorHint="#000"
         android:textSize="16sp"
@@ -80,20 +80,9 @@
         app:layout_constraintTop_toBottomOf="@+id/et_date" />
 
 
-    <ProgressBar
-        android:id="@+id/pb_carregar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:theme="@style/ProgressBarStyle"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/bt_consultar" />
-
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="327dp"
-        android:layout_height="195dp"
+        android:layout_width="396dp"
+        android:layout_height="182dp"
         android:layout_margin="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="100dp"
@@ -120,9 +109,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/valor"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
+                android:text="@string/valor"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -133,9 +122,9 @@
                 android:layout_marginTop="8dp"
                 android:textColor="@android:color/primary_text_light"
                 android:textStyle="italic"
+                tools:text="4381287"
                 app:layout_constraintStart_toStartOf="@+id/label_valor"
-                app:layout_constraintTop_toBottomOf="@+id/label_valor"
-                tools:text="4381287" />
+                app:layout_constraintTop_toBottomOf="@+id/label_valor" />
 
             <TextView
                 android:id="@+id/tv_label_total_beneficiados"
@@ -155,13 +144,13 @@
                 android:layout_marginTop="8dp"
                 android:textColor="@android:color/primary_text_light"
                 android:textStyle="italic"
+                tools:text="29445"
                 app:layout_constraintStart_toStartOf="@+id/label_valor"
-                app:layout_constraintTop_toBottomOf="@+id/tv_label_total_beneficiados"
-                tools:text="29445" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_label_total_beneficiados" />
 
             <TextView
                 android:id="@+id/label_informativo"
-                android:layout_width="0dp"
+                android:layout_width="383dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="16dp"

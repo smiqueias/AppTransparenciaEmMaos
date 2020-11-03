@@ -3,14 +3,12 @@ package com.imagine.transparnciaemmosbrasilapp.general.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.ProgressBar
 import android.widget.Toast
 import com.imagine.transparnciaemmosbrasilapp.R
-import com.imagine.transparnciaemmosbrasilapp.general.services.apiservices.BolsaFamiliaService
-import com.imagine.transparnciaemmosbrasilapp.general.services.apiservices.CEPService
-import com.imagine.transparnciaemmosbrasilapp.general.services.builderservices.ServiceBuilderBolsaFamilia
-import com.imagine.transparnciaemmosbrasilapp.general.services.builderservices.ServiceBuilderCEP
+import com.imagine.transparnciaemmosbrasilapp.general.services.BolsaFamiliaService
+import com.imagine.transparnciaemmosbrasilapp.general.services.CEPService
+import com.imagine.transparnciaemmosbrasilapp.general.services.ServiceBuilderBolsaFamilia
+import com.imagine.transparnciaemmosbrasilapp.general.services.ServiceBuilderCEP
 import kotlinx.android.synthetic.main.activity_tela_de_busca_gastos_b_f.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -18,13 +16,11 @@ import kotlinx.coroutines.launch
 
 class TelaDeBuscaGastosBF : AppCompatActivity() {
 
-
-    private var codIbge: String = ""
+    var codIbge: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_de_busca_gastos_b_f)
-
 
         bt_consultar.setOnClickListener {
 
@@ -40,19 +36,13 @@ class TelaDeBuscaGastosBF : AppCompatActivity() {
                             ).show()
                         }
                     } else {
-                       runOnUiThread(){ pb_carregar.visibility = View.VISIBLE
-                       }
                         try {
                             getCodeIBGE()
                             getDataBolsaFamilia(codIbge)
                         } catch (e: Exception) {
-                            e.printStackTrace()
                             runOnUiThread() {
-
-                                pb_carregar.visibility = View.GONE
-
                                 Toast.makeText(
-                                    baseContext, "Erro de conexão",
+                                    baseContext, "Erro de conexão com o servidor",
                                     Toast.LENGTH_LONG
                                 ).show()
                             }
@@ -74,16 +64,13 @@ class TelaDeBuscaGastosBF : AppCompatActivity() {
     }
 
 
-    private suspend fun getCodeIBGE() {
+    suspend fun getCodeIBGE() {
 
         val destinationServiceCEP = ServiceBuilderCEP.buildServiceCEP(CEPService::class.java)
 
         val requestCall = destinationServiceCEP.fetchCEP(et_municipio.text.toString())
 
         if (requestCall.isSuccessful) {
-
-          runOnUiThread(){pb_carregar.visibility = View.GONE}
-
             codIbge = requestCall.body()!!.ibge
         } else {
             runOnUiThread() {
@@ -93,7 +80,7 @@ class TelaDeBuscaGastosBF : AppCompatActivity() {
         }
     }
 
-    private suspend fun getDataBolsaFamilia(codIbge: String) {
+    suspend fun getDataBolsaFamilia(codIbge: String) {
 
         val destinationServiceBolsaFamilia = ServiceBuilderBolsaFamilia
             .buildServiceBolsaFamilia(BolsaFamiliaService::class.java)
@@ -114,9 +101,8 @@ class TelaDeBuscaGastosBF : AppCompatActivity() {
 
         }
     }
+
 }
-
-
 
 
 

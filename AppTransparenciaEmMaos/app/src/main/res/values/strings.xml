@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TransparênciaEmMãosBrasilApp</string>
+    <string name="gastos_bolsa_fam_lia">Gastos Bolsa Família</string>
+    <string name="munic_pio">Município *</string>
+    <string name="informe_cep">Informe seu CEP</string>
+    <string name="data">Data *</string>
+    <string name="datetime">Ex.201905</string>
+    <string name="consultar">CONSULTAR</string>
+    <string name="valor">Valor gasto:</string>
+    <string name="total_beneficiados">Total beneficiados:</string>
+    <string name="dados_obtidos_no_portal_da_transpar_ncia_do_governo_federal">* Dados obtidos no Portal da Transparência do Governo Federal</string>
+</resources>

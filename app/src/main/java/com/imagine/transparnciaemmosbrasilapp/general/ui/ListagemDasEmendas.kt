@@ -1,9 +1,11 @@
 package com.imagine.transparnciaemmosbrasilapp.general.ui
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.imagine.transparnciaemmosbrasilapp.R
@@ -12,6 +14,8 @@ import com.imagine.transparnciaemmosbrasilapp.general.model.EmendasModel
 import com.imagine.transparnciaemmosbrasilapp.general.services.apiservices.EmendasService
 import com.imagine.transparnciaemmosbrasilapp.general.services.builderservices.ServiceBuilderEmendas
 import kotlinx.android.synthetic.main.activity_listagem_das_emendas.*
+import kotlinx.android.synthetic.main.activity_tela_de_busca_gastos_b_f.*
+import kotlinx.android.synthetic.main.activity_tela_filtragem_emendas.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -29,6 +33,8 @@ class ListagemDasEmendas : AppCompatActivity() {
 
         if (nomeAutor!!.isEmpty() && numeroEmenda!!.isEmpty()) {
 
+            pb_carregar2.visibility = View.VISIBLE
+
             GlobalScope.launch(Dispatchers.IO) {
 
                 try {
@@ -40,6 +46,7 @@ class ListagemDasEmendas : AppCompatActivity() {
                     if (requestCall.isSuccessful && requestCall.body()?.size != 0) {
 
                         runOnUiThread() {
+                            pb_carregar2.visibility = View.GONE
                             startRecyclerView(requestCall.body() as MutableList<EmendasModel>)
 
                         }
@@ -56,17 +63,24 @@ class ListagemDasEmendas : AppCompatActivity() {
                         Log.i("REQUEST CODE", requestCall.code().toString())
                     }
                 } catch (e: Exception) {
-                    Toast.makeText(
-                        baseContext,
-                        "Erro de conexão",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    runOnUiThread() {
+
+                        pb_carregar.visibility = View.GONE
+
+                        Toast.makeText(
+                            baseContext,
+                            "Erro de conexão",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
                     e.printStackTrace()
                 }
             }
         }
 
         else if (nomeAutor.isNotEmpty() && numeroEmenda!!.isEmpty()) {
+
+            pb_carregar2.visibility = View.VISIBLE
 
             GlobalScope.launch(Dispatchers.IO) {
 
@@ -80,6 +94,7 @@ class ListagemDasEmendas : AppCompatActivity() {
                     if (requestCall.isSuccessful && requestCall.body()?.size != 0) {
 
                         runOnUiThread() {
+                            pb_carregar2.visibility = View.GONE
                             startRecyclerView(requestCall.body() as MutableList<EmendasModel>)
                         }
 
@@ -96,6 +111,9 @@ class ListagemDasEmendas : AppCompatActivity() {
                         Log.i("REQUEST CODE", requestCall.code().toString())
                     }
                 } catch (e: Exception) {
+
+                    pb_carregar.visibility = View.GONE
+
                     Toast.makeText(
                         baseContext,
                         "Erro de conexão",
@@ -109,6 +127,9 @@ class ListagemDasEmendas : AppCompatActivity() {
         }
 
         else {
+
+            pb_carregar2.visibility = View.VISIBLE
+
             GlobalScope.launch(Dispatchers.IO) {
 
                 try {
@@ -125,6 +146,7 @@ class ListagemDasEmendas : AppCompatActivity() {
                     if (requestCall.isSuccessful && requestCall.body()?.size != 0) {
 
                         runOnUiThread() {
+                            pb_carregar2.visibility = View.GONE
                             startRecyclerView(requestCall.body() as MutableList<EmendasModel>)
                         }
 
@@ -132,6 +154,7 @@ class ListagemDasEmendas : AppCompatActivity() {
 
                     else {
                         runOnUiThread() {
+
                             Toast.makeText(
                                 baseContext,
                                 "Nenhum resultado encontrado na busca",
@@ -141,11 +164,19 @@ class ListagemDasEmendas : AppCompatActivity() {
                         Log.i("REQUEST CODE", requestCall.code().toString())
                     }
                 } catch (e: Exception) {
-                    Toast.makeText(
-                        baseContext,
-                        "Erro de conexão",
-                        Toast.LENGTH_LONG
-                    ).show()
+
+                    startActivity(Intent(this@ListagemDasEmendas, TelaFiltragemEmendas::class.java))
+
+                    runOnUiThread() {
+
+                        pb_carregar.visibility = View.GONE
+
+                        Toast.makeText(
+                            baseContext,
+                            "Erro de conexão",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
                     e.printStackTrace()
                 }
             }
