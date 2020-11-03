@@ -1,6 +1,7 @@
 package com.imagine.transparnciaemmosbrasilapp.general.ui
 
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,6 +24,7 @@ import kotlinx.coroutines.launch
 class ListagemDasEmendas : AppCompatActivity() {
 
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listagem_das_emendas)
@@ -59,6 +61,8 @@ class ListagemDasEmendas : AppCompatActivity() {
                                 "Nenhum resultado encontrado na busca",
                                 Toast.LENGTH_LONG
                             ).show()
+                            tv_nenhumResultado.text = "NENHUM RESULTADO ENCONTRADO NA BUSCA"
+                            pb_carregar2.visibility = View.GONE
                         }
                         Log.i("REQUEST CODE", requestCall.code().toString())
                     }
@@ -107,6 +111,8 @@ class ListagemDasEmendas : AppCompatActivity() {
                                 "Nenhum resultado encontrado na busca",
                                 Toast.LENGTH_LONG
                             ).show()
+                            tv_nenhumResultado.text = "NENHUM RESULTADO ENCONTRADO NA BUSCA"
+                            pb_carregar2.visibility = View.GONE
                         }
                         Log.i("REQUEST CODE", requestCall.code().toString())
                     }
@@ -160,6 +166,8 @@ class ListagemDasEmendas : AppCompatActivity() {
                                 "Nenhum resultado encontrado na busca",
                                 Toast.LENGTH_LONG
                             ).show()
+                            tv_nenhumResultado.text = "NENHUM RESULTADO ENCONTRADO NA BUSCA"
+                            pb_carregar2.visibility = View.GONE
                         }
                         Log.i("REQUEST CODE", requestCall.code().toString())
                     }
