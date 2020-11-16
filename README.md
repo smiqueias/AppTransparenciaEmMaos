@@ -20,3 +20,6 @@ Um aplicatico cujo objetivo está em facilitar o acesso as informações present
 <img src="https://i.imgur.com/QXmVzuA.jpg" alt="Tela do App" width="300"/>
 <img src="https://i.imgur.com/aq2xNo5.jpg" alt="Tela do App" width="300"/>
 </p>
+
+## Status
+- Em desenvolvimento
